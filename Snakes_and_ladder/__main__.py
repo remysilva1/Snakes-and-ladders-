@@ -1,4 +1,5 @@
 from board import board
+from actions import dice
 
 with open("README.md","r") as f:
    print(f.read())
@@ -11,7 +12,7 @@ while True:
         exit()
     elif command == "throw dice":
         dice()
-        
+    
     elif command == "b":
         board(1)
     else:
