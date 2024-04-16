@@ -1,0 +1,2 @@
+def board(positions):
+ print ("...")
