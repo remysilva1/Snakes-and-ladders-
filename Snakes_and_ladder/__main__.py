@@ -1,7 +1,7 @@
 from board import board
 
-#with open("README.md","r") as f:
-#    print(f.read())
+with open("README.md","r") as f:
+   print(f.read())
     
 while True: 
     command = input("Enter a command:")
@@ -9,6 +9,8 @@ while True:
         hello() # type: ignore
     elif command == "q":
         exit()
+    elif command == "throw dice":
+        dice()
         
     elif command == "b":
         board(1)
