@@ -8,10 +8,11 @@ print("If you find a snake, you will fall. On the other hand, you will go upstai
 def dice():
     print("Throw the dice")
 
-import random 
+import random
 
 def throw_dice():
-    return random.randit(1,6)
+    result = list(range(1,7))
+    return random.choice(results)
 
 def play():
     print ("Click enter to throw the dice")
