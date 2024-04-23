@@ -17,7 +17,6 @@ while True:
     else:
         print("I did not understand this command.")
     
-print(board([]))
 
 #Add shift omnivox 
 #Do relations between every file with main
