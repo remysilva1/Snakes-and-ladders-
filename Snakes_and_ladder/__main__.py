@@ -16,7 +16,7 @@ while True:
         dice()
     else:
         print("I did not understand this command.")
-    
+     
 
 #Add shift omnivox 
 #Do relations between every file with main
