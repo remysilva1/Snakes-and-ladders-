@@ -1,2 +1,0 @@
-from board import create_new_board
-from test_actions import throw_dice 

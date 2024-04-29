@@ -1,6 +1,17 @@
+#Create an empty new board
 def create_new_board():
     board = [[" "]*10]*10
     return board
+
+def update_board(board, pos_player_1, pos_player_2):
+    if pos_player_1[0], pos_player_1[1] == pos_player_2[0], pos_player_2[1]:
+        board[pos_player_1[0]][pos_player_1[1]] = "&"
+    else: 
+        board[pos_player_1[0]][pos_player_1[1]] = "X"
+        board[pos_player_2[0]][pos_player_2[1]] = "O"
+    return board
+		
+
 
 def print_board(board):
     print(
@@ -25,4 +36,5 @@ def print_board(board):
 --------------------------------------
  {board[9][0]} | {board[9][1]} | {board[9][2]} | {board[9][3]} | {board[9][4]} | {board[9][5]} | {board[9][6]} | {board[9][7]} | {board[9][8]} | {board[9][9]}
 """
-    )
+    ) 
+    
