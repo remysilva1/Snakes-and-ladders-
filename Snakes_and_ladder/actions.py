@@ -48,7 +48,7 @@ def play():
     print ("Click enter to throw the dice")
     input()
     
-play_again = play*2 
+#play_again = play*2 
     
 def place(player,position,board):
     board[position[0]][position[1]] = player 
@@ -110,31 +110,53 @@ place(player_1,0,mi_tablero)
 print_board(mi_tablero)
 
 
-play_again()
+#play_again()
+
+def throw_again_dice():
+  print("Throw again the dice to advance")
+if throw_again_dice. lower() == 's':
+    play()
 
 # Function to move the player on the board based on the dice roll
-def move_player(player_position, dice_roll):
-    new_position = player_position + dice_roll
+def move_player(player_position, throw_again_dice):
+    new_position = player_position + throw_again_dice
     if new_position <= 100:
         return new_position
     else:
         return player_position
 
 # Main function to play the game
-def play_game():
-    board = create_new_board()  # Create the board
-    player_position = 0  # Start the player at position 0 (start)
-    
-    while player_position < 100:  # Keep playing until the player reaches position 100 (finish)
-        input("Press Enter to roll the dice...")
-        dice_roll = throw_again_dice()  # Roll the dice
-        print("You rolled a", dice_roll)
-        player_position = move_player(player_position, dice_roll)  # Move the player on the board
-        print("Your new position is:", player_position)
-    
-    print("Congratulations! You reached position 100 and finished the game.")
 
-play_game()
+def update_board(board, pos_player_1, pos_player_2):
+    if pos_player_1[0], pos_player_1[1] == pos_player_2[0], pos_player_2[1]:
+        board[pos_player_1[0]][pos_player_1[1]] = "&"
+    else: 
+        board[pos_player_1[0]][pos_player_1[1]] = "X"
+        board[pos_player_2[0]][pos_player_2[1]] = "O"
+    return board
+
+def move_player():
+      pos_player_1  
+
+
+while pos_player_1 < 100:  
+        input("Click again to roll the dice...")
+        
+        print("You rolled a", throw_again_dice)
+        pos_player_1 = move_player(pos_player_1, throw_again_dice)  
+        print("Your new position is:", pos_player_1)
+        str(print(update_board))
+print("Congratulations player 1! You reached position 100 and won the game.")
+
+while pos_player_2 < 100:  
+        input("Click again to roll the dice...")
+        
+        print("You rolled a", throw_again_dice)
+        pos_player_2 = move_player(pos_player_2, throw_again_dice)  
+        print("Your new position is:", pos_player_2)
+        str(print(update_board))
+print("Congratulations player 2! You reached position 100 and won the game.")
+play()
 
 
 #Data Science Galaxy. (2023, 4 junio). Snake and Ladder Game in Python | Game in Python | Data Science Galaxy [Vídeo]. YouTube. https://www.youtube.com/watch?v=A0HN2fn9x7E
