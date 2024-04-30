@@ -3,15 +3,21 @@ from actions import dice
 
 with open("README.md","r") as f:
    print(f.read())
+   
+def place():
+    place
 
-board = create_new_board()
-while True: 
+board = create_new_board() #Set up phase 
+while True:   #Per turn
     print_board(board)
-    command = input("Enter a command:")
-    if command == "hello":
-        hello() # type: ignore
-    elif command == "q":
-        exit()
+    # input("Click enter to throw the dice")
+    command = input("Enter a command:")   #Per command
+    if command == "place":
+        position = input("Position")
+        position = [int(p) for p in position]
+        place("x",position, board)
+        print_board(board)
+        
     elif command == "throw dice":
         dice()
     else:
