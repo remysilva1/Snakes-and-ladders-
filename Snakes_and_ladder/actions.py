@@ -1,4 +1,4 @@
-from board import board
+from .board import *
 def welcome ():
     print("Welcome to players")
     print("In this game you will have the opportunity to play this classical game called Snakes and ladder") #Explain them the rules of the game
@@ -73,19 +73,19 @@ else:
     print("Player 2 threw:", player_2)
     
 
-mi_tablero = board.create_new_board() 
-board.print_board(mi_tablero)
+mi_tablero = create_new_board() 
+print_board(mi_tablero)
 
-place(player_1,0,mi_tablero)
-board.print_board(mi_tablero)
+# place(player_1,0,mi_tablero) 
+print_board(mi_tablero)
 
 
 #play_again()
 
 def throw_again_dice():
   print("Throw again the dice to advance")
-if throw_again_dice. lower() == 's':
-    play()
+# if throw_again_dice. lower() == 's':
+ #   play()
 
 # Function to move the player on the board based on the dice roll
 def move_player(player_position, throw_again_dice):
@@ -98,31 +98,33 @@ def move_player(player_position, throw_again_dice):
 # Main function to play the game
 
 def update_board(board, pos_player_1, pos_player_2):
-    if pos_player_1[0], pos_player_1[1] == pos_player_2[0], pos_player_2[1]:
+    if [pos_player_1[0], pos_player_1[1]] == [pos_player_2[0], pos_player_2[1]]:
         board[pos_player_1[0]][pos_player_1[1]] = "&"
     else: 
         board[pos_player_1[0]][pos_player_1[1]] = "X"
         board[pos_player_2[0]][pos_player_2[1]] = "O"
     return board
 
-def move_player():
-      pos_player_1  
+# def move_player():
+#      pos_player_1  
+pos_player_1 = 99
+pos_player_2 = 99
 
 
 while pos_player_1 < 100:  
         input("Click again to roll the dice...")
-        
+        pos_player_1 = pos_player_1 + 1
         print("You rolled a", throw_again_dice)
-        pos_player_1 = move_player(pos_player_1, throw_again_dice)  
+       # pos_player_1 = move_player(pos_player_1, throw_again_dice)  
         print("Your new position is:", pos_player_1)
         str(print(update_board))
 print("Congratulations player 1! You reached position 100 and won the game.")
 
 while pos_player_2 < 100:  
         input("Click again to roll the dice...")
-        
+        pos_player_2 = pos_player_2 + 1
         print("You rolled a", throw_again_dice)
-        pos_player_2 = move_player(pos_player_2, throw_again_dice)  
+       # pos_player_2 = move_player(pos_player_2, throw_again_dice)  
         print("Your new position is:", pos_player_2)
         str(print(update_board))
 print("Congratulations player 2! You reached position 100 and won the game.")

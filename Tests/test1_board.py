@@ -3,7 +3,7 @@ def create_new_board():
     return board
 
 def update_board(board, pos_player_1, pos_player_2):
-    if pos_player_1[0], pos_player_1[1] == pos_player_2[0], pos_player_2[1]:
+    if [pos_player_1[0], pos_player_1[1]] == [pos_player_2[0], pos_player_2[1]]:
         board[pos_player_1[0]][pos_player_1[1]] = "&"
     else: 
         board[pos_player_1[0]][pos_player_1[1]] = "X"
