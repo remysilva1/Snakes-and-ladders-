@@ -2,10 +2,15 @@ from Snakes_and_ladder.board import print_board
 from Snakes_and_ladder.actions import throw_dice
 from Snakes_and_ladder.actions import climb 
 from Snakes_and_ladder.actions import fall
+# from Snakes_and_ladder.board import update_board
 
 def test_throw_dice():
     result = throw_dice()
     assert result in [1, 2, 3, 4, 5, 6]
+
+# functions
+#def test_place():
+    #assert print_board[update_board] == "X"
     
 def test_climb():
     # Setup the test inputs.
