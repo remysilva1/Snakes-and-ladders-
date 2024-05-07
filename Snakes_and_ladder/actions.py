@@ -1,5 +1,3 @@
-from .board import *
-
 def welcome ():
     print("Welcome to players")
     print("In this game you will have the opportunity to play this classical game called Snakes and ladder") #Explain them the rules of the game
@@ -8,7 +6,7 @@ def welcome ():
     print("The first one who arrives at the 100 place, wins. The two players will throw the dice, the one who gets the biggest number, will start the game.")
     print("If you find a snake, you will fall. On the other hand, you will go upstairs if you find a ladder.")
 
-from .board import *
+welcome()
 
 import random
 
