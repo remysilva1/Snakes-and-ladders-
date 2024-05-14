@@ -45,9 +45,9 @@ def print_board(pos_player_1, pos_player_2):
         row = board[i * 10: (i + 1) * 10]
         print(" | ".join(str(cell).rjust(2) for cell in row))
         if i < 9:
-            print("-" * 39)
+            print("-" * 44)
 
-def main():
+def start_game():
     while True:
         input ("Press enter to throw the dice")
         player_1 = throw_dice()
@@ -94,5 +94,5 @@ def main():
             current_player = "X"
 
 if __name__ == "__main__":
-    main()
+    start_game()
 
