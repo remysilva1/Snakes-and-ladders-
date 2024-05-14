@@ -5,6 +5,8 @@ def welcome ():
     print("The number of players is two.") 
     print("The first one who arrives at the 100 place, wins. The two players will throw the dice, the one who gets the biggest number, will start the game.")
     print("If you find a snake, you will fall. On the other hand, you will go upstairs if you find a ladder.")
+    print("Player 1 will be X")
+    print("Player 2 will be O")
 
 welcome()
 
@@ -15,10 +17,14 @@ def throw_dice():
 
 def climb(x):
     ladder_dict = {5: 17, 38: 71, 40: 53, 67: 80}
+    if x == 5 or x == 38 or x == 40 or x == 67:
+        print ("You have found a ladder,you climb to position " + str(ladder_dict.get(x)))
     return ladder_dict.get(x, x)
 
 def fall(y):
     snake_dict = {96: 10, 70: 50, 45: 36, 21: 19}
+    if y == 96 or y == 70 or y == 45 or y == 21:
+        print ("You found a snake, you fell to position " + str(snake_dict.get(y)))
     return snake_dict.get(y, y)
 
 def move_player(player_position, move):
@@ -31,6 +37,9 @@ def print_board(pos_player_1, pos_player_2):
     board = [" " for _ in range(101)]
     board[pos_player_1] = "X"
     board[pos_player_2] = "O"
+    if pos_player_1 == pos_player_2:
+        board[pos_player_1] = "&"
+        board[pos_player_2] = "&"
 
     for i in range(10):
         row = board[i * 10: (i + 1) * 10]
@@ -39,21 +48,25 @@ def print_board(pos_player_1, pos_player_2):
             print("-" * 39)
 
 def main():
-    player_1 = throw_dice()
-    player_2 = throw_dice()
+    while True:
+        input ("Press enter to throw the dice")
+        player_1 = throw_dice()
+        player_2 = throw_dice()
 
-    print("Player 1 rolled:", player_1)
-    print("Player 2 rolled:", player_2)
+        print("Player 1 rolled:", player_1)
+        print("Player 2 rolled:", player_2)
 
-    if player_1 > player_2:
-        print("Player 1 starts the game!")
-        current_player = "X"
-    elif player_2 > player_1:
-        print("Player 2 starts the game!")
-        current_player = "O"
-    else:
-        print("It's a tie! Roll the dice again.")
-        return
+        if player_1 > player_2:
+            print("Player 1 starts the game!")
+            current_player = "X"
+            break
+        elif player_2 > player_1:
+            print("Player 2 starts the game!")
+            current_player = "O"
+            break
+        else:
+            print("It's a tie! Roll the dice again.")
+        
 
     pos_player_1 = 0
     pos_player_2 = 0
